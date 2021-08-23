@@ -155,6 +155,7 @@ class Admin extends BaseController {
                 'page' => 'benzee_plugin',
                 'section' => 'benzee_admin_index',
                 'args' => [
+                    'options_name' => 'benzee_plugin',
                     'label_for' => 'cpt_manager',
                     'class' => 'ui-toggle',
                 ],
@@ -166,6 +167,7 @@ class Admin extends BaseController {
                 'page' => 'benzee_plugin',
                 'section' => 'benzee_admin_index',
                 'args' => [
+                    'options_name' => 'benzee_plugin',
                     'label_for' => 'taxonomy_manager',
                     'class' => 'ui-toggle',
                 ],
@@ -177,6 +179,7 @@ class Admin extends BaseController {
                 'page' => 'benzee_plugin',
                 'section' => 'benzee_admin_index',
                 'args' => [
+                    'options_name' => 'benzee_plugin',
                     'label_for' => 'media_widget',
                     'class' => 'ui-toggle',
                 ],
@@ -188,6 +191,7 @@ class Admin extends BaseController {
                 'page' => 'benzee_plugin',
                 'section' => 'benzee_admin_index',
                 'args' => [
+                    'options_name' => 'benzee_plugin',
                     'label_for' => 'gallery_manager',
                     'class' => 'ui-toggle',
                 ],
@@ -199,6 +203,7 @@ class Admin extends BaseController {
                 'page' => 'benzee_plugin',
                 'section' => 'benzee_admin_index',
                 'args' => [
+                    'options_name' => 'benzee_plugin',
                     'label_for' => 'testimonial_manager',
                     'class' => 'ui-toggle',
                 ],
@@ -210,11 +215,13 @@ class Admin extends BaseController {
                 'page' => 'benzee_plugin',
                 'section' => 'benzee_admin_index',
                 'args' => [
+                    'options_name' => 'benzee_plugin',
                     'label_for' => 'templates_manager',
                     'class' => 'ui-toggle',
                 ],
             ],
             [
+                'options_name' => 'benzee_plugin',
                 'id' => 'login_manager',
                 'title' => 'Activate Login Manager',
                 'callback' => [$this->callbacks, 'checkBoxField'],
@@ -226,6 +233,7 @@ class Admin extends BaseController {
                 ],
             ],
             [
+                'options_name' => 'benzee_plugin',
                 'id' => 'membership_manager',
                 'title' => 'Activate Membership Manager',
                 'callback' => [$this->callbacks, 'checkBoxField'],
@@ -237,6 +245,7 @@ class Admin extends BaseController {
                 ],
             ],
             [
+                'options_name' => 'benzee_plugin',
                 'id' => 'chat_manager',
                 'title' => 'Activate Chat Manager',
                 'callback' => [$this->callbacks, 'checkBoxField'],
