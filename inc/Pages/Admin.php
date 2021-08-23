@@ -86,15 +86,50 @@ class Admin extends BaseController {
     public function setSettings(){
         $args = [
             [
-                'option_group' => 'benzee_options_group',
-                'option_name' => 'test_example',
-                'callback' => [$this->callbacks, 'benzeeOptionGroup'],
+                'option_group' => 'benzee_plugin_settings',
+                'option_name' => 'cpt_manager',
+                'callback' => [$this->callbacks, 'checkboxSanitize'],
             ],
             [
-                'option_group' => 'benzee_options_group',
-                'option_name' => 'first_name',
-                'callback' => [$this->callbacks, 'benzeeOptionGroup'],
-            ]
+                'option_group' => 'benzee_plugin_settings',
+                'option_name' => 'taxonomy_manager',
+                'callback' => [$this->callbacks, 'checkboxSanitize'],
+            ],
+            [
+                'option_group' => 'benzee_plugin_settings',
+                'option_name' => 'media_widget',
+                'callback' => [$this->callbacks, 'checkboxSanitize'],
+            ],
+            [
+                'option_group' => 'benzee_plugin_settings',
+                'option_name' => 'gallery_manager',
+                'callback' => [$this->callbacks, 'checkboxSanitize'],
+            ],
+            [
+                'option_group' => 'benzee_plugin_settings',
+                'option_name' => 'testimonial_manager',
+                'callback' => [$this->callbacks, 'checkboxSanitize'],
+            ],
+            [
+                'option_group' => 'benzee_plugin_settings',
+                'option_name' => 'templates_manager',
+                'callback' => [$this->callbacks, 'checkboxSanitize'],
+            ],
+            [
+                'option_group' => 'benzee_plugin_settings',
+                'option_name' => 'login_manager',
+                'callback' => [$this->callbacks, 'checkboxSanitize'],
+            ],
+            [
+                'option_group' => 'benzee_plugin_settings',
+                'option_name' => 'membership_manager',
+                'callback' => [$this->callbacks, 'checkboxSanitize'],
+            ],
+            [
+                'option_group' => 'benzee_plugin_settings',
+                'option_name' => 'chat_manager',
+                'callback' => [$this->callbacks, 'checkboxSanitize'],
+            ],
         ];
         $this->settings->setSettings($args);
     }
@@ -103,8 +138,8 @@ class Admin extends BaseController {
         $args = [
             [
                 'id' => 'benzee_admin_index',
-                'title' => 'Settings',
-                'callback' => [$this->callbacks, 'benzeeAdminSection'],
+                'title' => 'Settings Manager',
+                'callback' => [$this->callbacks, 'adminSectionManager'],
                 'page' => 'benzee_plugin'
             ]
         ];
@@ -114,27 +149,105 @@ class Admin extends BaseController {
     public function setFields(){
         $args = [
             [
-                'id' => 'test_example',
-                'title' => 'Text Example',
-                'callback' => [$this->callbacks, 'benzeeTextExample'],
+                'id' => 'cpt_manager',
+                'title' => 'Activate CPT Manager',
+                'callback' => [$this->callbacks, 'checkBoxField'],
                 'page' => 'benzee_plugin',
                 'section' => 'benzee_admin_index',
                 'args' => [
-                    'label_for' => 'test_example',
-                    'class' => 'example-class',
+                    'label_for' => 'cpt_manager',
+                    'class' => 'ui-toggle',
                 ],
             ],
             [
-                'id' => 'first_name',
-                'title' => 'First Name',
-                'callback' => [$this->callbacks, 'benzeeFirstName'],
+                'id' => 'taxonomy_manager',
+                'title' => 'Activate Taxonomy Manager',
+                'callback' => [$this->callbacks, 'checkBoxField'],
                 'page' => 'benzee_plugin',
                 'section' => 'benzee_admin_index',
                 'args' => [
-                    'label_for' => 'first_name',
-                    'class' => 'example-class',
+                    'label_for' => 'taxonomy_manager',
+                    'class' => 'ui-toggle',
                 ],
-            ]
+            ],
+            [
+                'id' => 'media_widget',
+                'title' => 'Activate Media Widget',
+                'callback' => [$this->callbacks, 'checkBoxField'],
+                'page' => 'benzee_plugin',
+                'section' => 'benzee_admin_index',
+                'args' => [
+                    'label_for' => 'media_widget',
+                    'class' => 'ui-toggle',
+                ],
+            ],
+            [
+                'id' => 'gallery_manager',
+                'title' => 'Activate Gallery Manager',
+                'callback' => [$this->callbacks, 'checkBoxField'],
+                'page' => 'benzee_plugin',
+                'section' => 'benzee_admin_index',
+                'args' => [
+                    'label_for' => 'gallery_manager',
+                    'class' => 'ui-toggle',
+                ],
+            ],
+            [
+                'id' => 'testimonial_manager',
+                'title' => 'Activate Testimonial Manager',
+                'callback' => [$this->callbacks, 'checkBoxField'],
+                'page' => 'benzee_plugin',
+                'section' => 'benzee_admin_index',
+                'args' => [
+                    'label_for' => 'testimonial_manager',
+                    'class' => 'ui-toggle',
+                ],
+            ],
+            [
+                'id' => 'templates_manager',
+                'title' => 'Activate Templates Manager',
+                'callback' => [$this->callbacks, 'checkBoxField'],
+                'page' => 'benzee_plugin',
+                'section' => 'benzee_admin_index',
+                'args' => [
+                    'label_for' => 'templates_manager',
+                    'class' => 'ui-toggle',
+                ],
+            ],
+            [
+                'id' => 'login_manager',
+                'title' => 'Activate Login Manager',
+                'callback' => [$this->callbacks, 'checkBoxField'],
+                'page' => 'benzee_plugin',
+                'section' => 'benzee_admin_index',
+                'args' => [
+                    'label_for' => 'login_manager',
+                    'class' => 'ui-toggle',
+                ],
+            ],
+            [
+                'id' => 'membership_manager',
+                'title' => 'Activate Membership Manager',
+                'callback' => [$this->callbacks, 'checkBoxField'],
+                'page' => 'benzee_plugin',
+                'section' => 'benzee_admin_index',
+                'args' => [
+                    'label_for' => 'membership_manager',
+                    'class' => 'ui-toggle',
+                ],
+            ],
+            [
+                'id' => 'chat_manager',
+                'title' => 'Activate Chat Manager',
+                'callback' => [$this->callbacks, 'checkBoxField'],
+                'page' => 'benzee_plugin',
+                'section' => 'benzee_admin_index',
+                'args' => [
+                    'label_for' => 'chat_manager',
+                    'class' => 'ui-toggle',
+                ],
+            ],
+
         ];
         $this->settings->setFields($args);
     }

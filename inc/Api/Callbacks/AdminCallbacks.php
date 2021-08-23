@@ -19,9 +19,9 @@ class AdminCallbacks extends BaseController
         return $input;
     }
 
-    public function benzeeAdminSection( )
+    public function checkboxSanitize( $input )
     {
-        echo 'Check this section';
+        return (isset($input));
     }
 
     public function benzeeTextExample( )
@@ -34,5 +34,18 @@ class AdminCallbacks extends BaseController
     {
         $value = esc_attr(get_option('text_example'));
         echo '<input type="checkbox" class="regular-text" name="first_name" value="'.$value.'" placeholder="First Name">';
+    }
+    public function adminSectionManager( )
+    {
+        echo 'Activate the Sections and Features of this Plugin by activating the checkboxes from the following list.';
+    }
+    public function checkBoxField( $args )
+    {
+        $name = $args['label_for'];
+        $classes = $args['class'];
+        $checkbox = get_option($name);
+        echo '<div class="'.$classes.'"><input type="checkbox" class="'.$classes.'" name="'.$name.'" id="'.$name.'" value="1" '.($checkbox ? 'checked' : '').'>
+                   <label for="'.$name.'"></div></div></label>
+                </div>';
     }
 }
