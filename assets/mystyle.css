@@ -1,3 +1,7 @@
+
+.inline-block {
+    display: inline-block;
+}
 .nav-tabs {
  float: left;
     width: 100%;
@@ -45,4 +49,21 @@
     padding: 10px;
     background-color: #fff;
     box-shadow: 0 5px 4px -2px rgba(0,0,0, 0.15);
+}
+
+/*custom table styling*/
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
 }

@@ -5,6 +5,8 @@
 
 namespace Inc;
 
+use Inc\Base\BaseController;
+
 final class Init {
 
     /*
@@ -15,7 +17,9 @@ final class Init {
         return [
             Pages\Admin::class,
             Base\Settings::class,
-            Base\Enqueue::class
+            Base\Enqueue::class,
+            Base\CustomPostTypeController::class,
+            Base\TaxonomyManagerController::class
         ];
     }
     /*
