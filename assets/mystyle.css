@@ -67,3 +67,6 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
+.mb-10{
+    margin-bottom: 10px;
+}

@@ -69,4 +69,35 @@ class TaxonomyManagerCallbacks extends BaseController
                    <label for="'.$name.'"></div></div></label>
                 </div>';
     }
+    public function checkBoxPostTypesField( $args ){
+
+        $output = '';
+        $name = $args['label_for'];
+        $classes = $args['class'];
+        $option_name = $args['option_name'];
+
+        $checked = false;
+        if (isset($_POST['edit_taxonomy'])){
+            $checkbox = get_option($option_name);
+
+        }
+
+        $post_types = get_post_types(array('show_ui'=> true));
+
+        foreach ($post_types as $post){
+            if (isset($_POST['edit_taxonomy'])){
+                $checked = isset($checkbox[$_POST['edit_taxonomy']][$name][$post]) ?:false;
+            }
+
+
+            $output .= '<div class="'.$classes.'">
+                            <input type="checkbox" class="'.$classes.'mb-10" name="'.$option_name.'['.$name.']['.$post.']" 
+                                 id="'.$name.'" value="1" '.($checked ? 'checked' : '').'>
+                            <label for="'.$name.'">
+                            <strong>'.$post.'</strong></label>
+                            
+                        </div>';
+        }
+        echo $output;
+    }
 }
